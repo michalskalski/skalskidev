@@ -3,7 +3,7 @@ title = "Connecting my illumos box to a Japanese ISP"
 date = 2026-08-09
 +++
 
-_Update (2026-09-06): This article had 3 version. The first one, never published, I asked an LLM to rewrite to be easier to follow  by the external reader and that was the initial version published here. It still can be seen in the [repository](https://github.com/michalskalski/skalskidev/blob/13592d0c9f0f059db78f3dec7c01bfdbca6a7a05/content/2026-08-09_connecting_my_illumos_box_to_a_japanese_isp/index.md). I decided to rewrite it again while still have a fresh memory on this topic, this time using my own words. I would like to feel more connection with what I publish here._
+_Update (2026-09-06): This article had 3 versions. The first one, never published, I asked an LLM to rewrite to be easier to follow by the external reader and that was the initial version published here. It still can be seen in the [repository](https://github.com/michalskalski/skalskidev/blob/13592d0c9f0f059db78f3dec7c01bfdbca6a7a05/content/2026-08-09_connecting_my_illumos_box_to_a_japanese_isp/index.md). I decided to rewrite it again while still have a fresh memory on this topic, this time using my own words. I would like to feel more connection with what I publish here._
 
 When I was moving I chose to do it light, one suitcase per person and only few boxes sent on multi-month trip on the ship (mainly books for my kid). The things I couldn't give away, sell or throw away landed at my parents' house and that included my home server. When I had a chance to visit my family home, I took out the motherboard ([X10SDV-6C-TLN4F](https://www.supermicro.com/en/products/motherboard/x10sdv-6c-tln4f)), RAM sticks and a pair of SDD disks from the server and "smuggled" them back with me.
 
@@ -46,7 +46,7 @@ through an [illumos door](https://man.omnios.org/man3c/door_call), a local proce
 
 so in this case the program which received the call expected the nvlist at offset 12 but my client placed it at offset 16. It wasn't visible when I used `ipadm` because is shipped also as 32-bit program. Turned out this had already been reported as an [illumos issue](https://www.illumos.org/issues/17851). I switched after this to using `SIOCSLIFADDR`, and today I know I can also take a look at Oxide Computer's [netadm-sys](https://github.com/oxidecomputer/netadm-sys).
 
-On the way I solved other problems like discovering the local IPv6 address I should use, reacting to network events and overall had fun with describing the possible states of the connection with a reconcile loop approach. At some point, when my router was still between the server and modem, I could setup and maintain my illumos box connection to IPS's AFTR:
+On the way I solved other problems like discovering the local IPv6 address I should use, reacting to network events and overall had fun with describing the possible states of the connection with a reconcile loop approach. At some point, when my router was still between the server and modem, I could setup and maintain my illumos box connection to ISP's AFTR:
 
 ```
 $ dslite-b4 status
